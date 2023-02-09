@@ -38,26 +38,19 @@ def fetch(symbol:  str, timeframe: str, count: int):
     df['Date'] = df['Time']
 
     df['Date'] = pd.to_datetime(df['Time'], unit='ms')
-    df.set_index('Date', inplace=True)
-    df.columns = ['Local time', 'Open', 'High',
-                  'Low', 'Close', 'Volume']  # , 'signal'
-
-    # # df['Time'] = df['Time'].dt.strftime("%Y-%m-%d:%H:%M")
-    # df = df.set_index('Time')
+    # df.set_index('Date', inplace=True)
 
     return df
 
 
 EUR_USD = fetch('EUR_USD', 'M5', 500)
-# print(EUR_USD)
+
+
 EUR_USD['Close'] = EUR_USD['Close'].astype(np.float64)
 EUR_USD['Open'] = EUR_USD['Open'].astype(np.float64)
 EUR_USD['Low'] = EUR_USD['Low'].astype(np.float64)
 EUR_USD['Volume'] = EUR_USD['Volume'].astype(np.float64)
 EUR_USD['High'] = EUR_USD['High'].astype(np.float64)
-
-# print(type(EUR_USD))
-# print(type(GOOG))
 
 
 def random_num():
@@ -107,4 +100,4 @@ print(stats)
 bt.plot(plot_drawdown=True, show_legend=True)
 
 
-# print((EUR_USD))
+print((EUR_USD))
