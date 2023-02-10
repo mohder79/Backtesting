@@ -10,7 +10,7 @@ import numpy as np
 # pd.set_option('display.max_rows', None)  # fix *** to show all rows
 
 
-access_token = '4f1c0806046d57e80f1143d71160cfbd-7eff0f2ccf97ace67f436c29588754ad'
+access_token = ''
 client = oandapyV20.API(access_token=access_token)
 
 
